@@ -3,16 +3,16 @@ package com.akapps.paani.Model;
 public class User {
     private String name;
     private String profile;
-    private String phone;
+    private String email;
     private String uid;
     private String password;
     public User(){
 
     }
-    public User(String name, String profile, String phone, String uid, String password) {
+    public User(String name, String profile, String email, String uid, String password) {
         this.name = name;
         this.profile = profile;
-        this.phone = phone;
+        this.email = email;
         this.uid = uid;
         this.password = password;
     }
@@ -41,12 +41,12 @@ public class User {
         this.uid = uid;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String phone) {
+        this.email = phone;
     }
 
     public String getPassword() {

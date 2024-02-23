@@ -3,9 +3,7 @@ package com.akapps.paani.Views.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,6 +11,7 @@ import android.view.animation.AnimationUtils;
 
 import com.akapps.paani.Api.LoginRepo;
 import com.akapps.paani.Callback.LoginRegisterResultListener;
+import com.akapps.paani.Firebase.FirebaseAuthClient;
 import com.akapps.paani.Model.User;
 import com.akapps.paani.R;
 import com.akapps.paani.Utils.RequestHandler;
@@ -21,6 +20,8 @@ import com.akapps.paani.Views.LoadingDialog;
 import com.akapps.paani.databinding.ActivityLoginBinding;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.UUID;
 
@@ -39,7 +40,8 @@ public class LoginActivity extends AppCompatActivity implements LoginRegisterRes
 
         SharedPref sharedPref = new SharedPref(this);
         RequestHandler requestHandler = RequestHandler.getInstance();
-        loginRepo = new LoginRepo(sharedPref, requestHandler);
+        FirebaseAuthClient firebaseAuthClient = new FirebaseAuthClient(FirebaseAuth.getInstance(), FirebaseFirestore.getInstance());
+        loginRepo = new LoginRepo(sharedPref, requestHandler, firebaseAuthClient);
 
         isLogin = true;
         setUiHandler();
@@ -74,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoginRegisterRes
                     loginRepo.login(new User(
                             "",
                             "",
-                            views.loginPhone.getText().toString(),
+                            views.loginEmail.getText().toString(),
                             "",
                             views.loginPassword.getText().toString()
                     ), this);
@@ -82,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements LoginRegisterRes
                     loginRepo.register(new User(
                             views.loginName.getText().toString(),
                             null,
-                            views.loginPhone.getText().toString(),
+                            views.loginEmail.getText().toString(),
                             randomUUID(),
                             views.loginPassword.getText().toString()
                     ), this);
@@ -99,16 +101,16 @@ public class LoginActivity extends AppCompatActivity implements LoginRegisterRes
     }
 
     private boolean allFilled() {
-        if(views.loginPhone.getText().length()==0){
-            Snackbar.make(views.loginPhone, R.string.phone_required, BaseTransientBottomBar.LENGTH_SHORT).show();
+        if(views.loginEmail.getText().length()==0){
+            views.loginEmail.setError(getString(R.string.email_required));
             return false;
         };
         if(views.loginPassword.getText().length()==0){
-            Snackbar.make(views.loginPassword, R.string.password_required, BaseTransientBottomBar.LENGTH_SHORT).show();
+            views.loginPassword.setError(getString(R.string.password_required));
             return false;
         };
         if( (!isLogin) && views.loginName.getText().length()==0){
-            Snackbar.make(views.loginName, R.string.name_required, BaseTransientBottomBar.LENGTH_SHORT).show();
+            views.loginName.setError(getString(R.string.name_required));
             return false;
         };
         return true;

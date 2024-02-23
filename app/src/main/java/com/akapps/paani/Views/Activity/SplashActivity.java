@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.akapps.paani.Api.LoginRepo;
+import com.akapps.paani.Firebase.FirebaseAuthClient;
 import com.akapps.paani.R;
 import com.akapps.paani.Utils.SharedPref;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         SharedPref sharedPref = new SharedPref(this);
-        LoginRepo loginRepo = new LoginRepo(sharedPref, null);
+        LoginRepo loginRepo = new LoginRepo(sharedPref, null, new FirebaseAuthClient(FirebaseAuth.getInstance(), null));
 
         if(loginRepo.isLoggedIn()){
             goToHome();

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Paani</string>
+    <string name="app_name">Pipasha</string>
     <string name="recent_order">Recent Orders</string>
     <string name="current_order">Current Order</string>
     <string name="view_all_orders">View All Orders</string>
@@ -11,4 +11,11 @@
     <string name="phone_required">Phone number is required</string>
     <string name="password_required">Password is required</string>
     <string name="name_required">Name is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="email_hint">Email...</string>
+    <string name="password_hint">Password...</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="submit">Submit</string>
+    <string name="full_name_hint">Full Name...</string>
 </resources>

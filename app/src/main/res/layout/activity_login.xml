@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_nav_back"
-        app:layout_constraintVertical_bias="0.25">
+        app:layout_constraintVertical_bias="0.45">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,15 +45,16 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/text_editor_bg"
-                android:hint="Full Name..."
+                android:hint="@string/full_name_hint"
                 android:inputType="text|textAutoComplete|textCapWords"
                 android:visibility="gone"
+                android:imeOptions="actionNext"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <AutoCompleteTextView
-                android:id="@+id/login_phone"
+                android:id="@+id/login_email"
                 style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -61,8 +62,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/text_editor_bg"
-                android:hint="Phone Number..."
-                android:inputType="phone"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,12 +79,13 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/text_editor_bg"
-                android:hint="Password..."
+                android:hint="@string/password_hint"
                 android:inputType="textPassword"
+                android:imeOptions="actionDone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_phone" />
+                app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -106,7 +109,7 @@
                         android:id="@+id/login_section_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Login"
+                        android:text="@string/login"
                         android:textColor="@color/white"
                         android:textSize="22sp" />
                 </LinearLayout>
@@ -124,7 +127,7 @@
                         android:id="@+id/register_section_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Register"
+                        android:text="@string/register"
                         android:textColor="@color/blue"
                         android:textSize="22sp" />
                 </LinearLayout>
@@ -139,7 +142,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/white"
-                android:text="Submit"
+                android:text="@string/submit"
                 android:textColor="@color/blue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/login_password"

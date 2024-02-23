@@ -7,4 +7,5 @@
     <color name="darkwhite">#F4F6FC</color>
     <color name="blue">#2061A5</color>
     <color name="translucent_black">#A92061A5</color>
+    <color name="shimmerColor">#C2C2C2</color>
 </resources>

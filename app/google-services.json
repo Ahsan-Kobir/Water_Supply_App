@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "289262346158",
+    "firebase_url": "https://watersupply-a4e76-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "watersupply-a4e76",
+    "storage_bucket": "watersupply-a4e76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289262346158:android:ef77d9a71d4fa92f14323f",
+        "android_client_info": {
+          "package_name": "com.akapps.paani"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPP9pFZaQI680_FvX8GGk0OZm41BTJQtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

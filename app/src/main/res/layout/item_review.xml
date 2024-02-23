@@ -11,6 +11,7 @@
         android:id="@+id/itemReview_profile"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
@@ -19,10 +20,10 @@
         android:id="@+id/itemReview_ratingbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:isIndicator="false"
+        android:isIndicator="true"
         android:numStars="5"
         android:progressTint="@color/blue"
-        android:rating="4"
+        android:rating="5"
         app:layout_constraintStart_toEndOf="@+id/itemReview_profile"
         app:layout_constraintTop_toBottomOf="@+id/itemReview_name" />
 

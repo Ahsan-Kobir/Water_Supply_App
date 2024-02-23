@@ -38,6 +38,7 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -46,6 +47,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -63,18 +65,19 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Price: " />
+
                     <TextView
                         android:id="@+id/placeOrder_cart_productPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="40 BDT"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -84,7 +87,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quantity: "/>
+                        android:text="Quantity: " />
+
                     <TextView
                         android:id="@+id/placeOrder_cart_productQuantityMinus"
                         android:layout_width="wrap_content"
@@ -92,14 +96,16 @@
                         android:layout_marginLeft="8dp"
                         android:text="-"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/placeOrder_cart_productQuantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1x"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
+                        android:text="1x"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/placeOrder_cart_productQuantityPlus"
                         android:layout_width="wrap_content"
