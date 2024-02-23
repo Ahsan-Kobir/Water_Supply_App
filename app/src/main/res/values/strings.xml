@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Paani</string>
+    <string name="recent_order">Recent Orders</string>
+    <string name="current_order">Current Order</string>
+    <string name="view_all_orders">View All Orders</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="active_plan">Active Plan:</string>
+    <string name="no_active_plan">No Active Plan</string>
+    <string name="your_saved_location">Your Saved Location</string>
+    <string name="phone_required">Phone number is required</string>
+    <string name="password_required">Password is required</string>
+    <string name="name_required">Name is required</string>
+</resources>

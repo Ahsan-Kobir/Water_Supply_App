@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemReview_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
+
+    <RatingBar
+        android:id="@+id/itemReview_ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:progressTint="@color/blue"
+        android:rating="4"
+        app:layout_constraintStart_toEndOf="@+id/itemReview_profile"
+        app:layout_constraintTop_toBottomOf="@+id/itemReview_name" />
+
+    <TextView
+        android:id="@+id/itemReview_review_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="That is great app for water delivery"
+        app:layout_constraintStart_toStartOf="@+id/itemReview_ratingbar"
+        app:layout_constraintTop_toBottomOf="@+id/itemReview_ratingbar" />
+
+    <TextView
+        android:id="@+id/itemReview_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Md Ahsan Kabir"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/itemReview_profile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemReview_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5:22 PM 21 Oct 2023"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemReview_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

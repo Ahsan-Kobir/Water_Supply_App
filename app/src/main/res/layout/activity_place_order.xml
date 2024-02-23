@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkwhite"
+    tools:context=".Views.Activity.PlaceOrderActivity">
+
+    <ImageView
+        android:id="@+id/placeOrder_nav_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/placeOrder_cart_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeOrder_nav_image">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/placeOrder_cart_productImage"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/water_tank" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/placeOrder_cart_productImage"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/placeOrder_cart_productTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pure Water 20 Litre"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price: " />
+                    <TextView
+                        android:id="@+id/placeOrder_cart_productPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="40 BDT"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity: "/>
+                    <TextView
+                        android:id="@+id/placeOrder_cart_productQuantityMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="-"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/placeOrder_cart_productQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1x"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/placeOrder_cart_productQuantityPlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/placeOrder_deliveryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery to"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeOrder_cart_cardview" />
+
+    <ImageView
+        android:id="@+id/placeOrder_delivery_address_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/baseline_mode_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/placeOrder_deliveryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/placeOrder_deliveryText" />
+
+    <LinearLayout
+        android:id="@+id/placeOrder_delivery_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeOrder_deliveryText">
+        <TextView
+            android:id="@+id/placeOrder_delivery_name_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Md Ahsan Kabir, 01710101010"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/placeOrder_delivery_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DKP Road, Barguna Sadar, Barguna"
+            android:textSize="18sp" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/placeOrder_delivery_map"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/placeOrder_price_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeOrder_delivery_layout">
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_attach_money_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Price: "
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/placeOrder_price_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 BDT"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_directions_car_filled_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Charge: "
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/placeOrder_price_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FREE"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_attach_money_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payable Amount: "
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/placeOrder_price_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 BDT"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/placeOrder_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Place Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
